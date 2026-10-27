@@ -1,144 +1,134 @@
 <div align="center">
 
+<a href="https://orbelion.com"><img src="https://assets.orbelion.com/Logo%20azul.png" alt="ORBELION official blue logo" width="128" height="128"></a>
+
 # ORBELION
 
-### Enterprise Technology Platform
+<p>Enterprise Technology Solutions</p>
 
-**Data Engineering · Cloud Integration · Business Applications · Analytics · Automation · AI**
+<p><strong>Enterprise Technology · Cloud · Business Systems · Data & Analytics · Artificial Intelligence</strong></p>
 
-Technology ecosystem focused on designing and implementing enterprise solutions across data, applications, analytics, cloud infrastructure and artificial intelligence.
+Engineering connected business systems, dependable data pipelines and evidence-backed AI.
+
+[Corporate Website](https://orbelion.com) · [Engineering Portfolio](#engineering-portfolio)
 
 </div>
 
 ---
 
-## ORBELION Ecosystem
+## Technology Solutions
+
+| Practice | Engineering focus |
+| --- | --- |
+| **01 — Cloud & Infrastructure** | Cloudflare and Microsoft Azure; application infrastructure, APIs, containers, identity and security boundaries. |
+| **02 — Business Systems** | Business applications, ERP and CRM integration, Microsoft 365 workflows and process automation. |
+| **03 — Data & Analytics** | Data engineering, ETL, SQL data warehousing, Power BI semantic models and decision dashboards. |
+| **04 — Artificial Intelligence** | Model API integration, scoped agents, typed enterprise tools and intelligent workflow orchestration. |
+
+## Enterprise Architecture
+
+Distinct analytical and application paths preserve service ownership. This summarizes documented integration patterns, not a single shared deployment.
 
 ```mermaid
 flowchart TB
-    ORB["ORBELION"]
-
-    ORB --> ETL["ETL Platform - Data Engineering"]
-    ORB --> OPS["Operations Portal - Enterprise Applications"]
-    ORB --> FIN["Finance Portal - Financial Systems"]
-    ORB --> BI["Power BI Analytics - Business Intelligence"]
-    ORB --> AI["AI Agent - Enterprise AI"]
-
-    ETL --> SQL["Azure SQL"]
-    SQL --> BI
-
-    OPS --> GRAPH["Microsoft Graph / SharePoint"]
-    AI --> GRAPH
+    Sources["Business systems / APIs / Cloud services"]
+    Sources --> ETL["Integration & ETL layer"]
+    ETL --> DW["Azure SQL analytical warehouse"]
+    DW --> BI["Power BI / Semantic models"]
+    M365["Microsoft 365 / SharePoint"]
+    Apps["Application services / Server APIs"]
+    M365 <-->|Microsoft Graph| Apps
+    Apps --> Portal["Business applications / Operations portal"]
+    Portal -->|Scoped server request| Agent["AI Agent service"]
+    Agent -->|Read-only tools| M365
+    Portal -.->|Read-only execution telemetry| ETL
+    classDef data fill:#003459,color:#FFFFFF,stroke:#ADEBFF
+    classDef service fill:#0B1728,color:#FFFFFF,stroke:#ADEBFF
+    class ETL,DW,BI data
+    class Apps,Portal,Agent service
 ```
 
----
+Application storage belongs to each service boundary. The Agent reads Microsoft 365 through scoped tools; no direct Agent-to-warehouse integration is claimed. ETL operational telemetry is separate from analytical data consumption.
 
-## Featured Projects
+## Engineering Portfolio
 
-### ORBELION ETL Platform
+Public repositories are curated engineering artifacts. Their documentation distinguishes private implementation evidence, runnable public examples and future work; availability here does not imply a production-ready distribution.
 
-Metadata-driven Python ETL platform for multi-source data integration, transformation, Azure SQL analytics and automated data pipelines.
+| Project | Technical purpose & implemented capabilities | Core technologies |
+| --- | --- | --- |
+| **[ORBELION ETL System](https://github.com/Orbelion-Platform/ORBELION-ETL-Platform)** | Metadata-driven ingestion and analytical loading; source connectors, schema validation, watermarks, audit records and a synthetic local demo. | Python, pandas, YAML, SQLAlchemy, Azure SQL, Docker |
+| **[ORBELION Operations Portal](https://github.com/Orbelion-Platform/ORBELION-Operations-Portal)** | Role-aware delivery workspace; SharePoint records, controlled writes, read-only ETL telemetry and an evidence-oriented assistant. Public case study with representative code. | TypeScript, React, Next.js, Cloudflare Workers, Microsoft Graph |
+| **[ORBELION Power BI Analytics](https://github.com/Orbelion-Platform/ORBELION-Power-BI)** | Dimensional modeling, centralized DAX measures and functional report pages. Sanitized examples and explicitly synthetic dashboard evidence. | Power BI, PBIP, PBIR, TMDL, DAX, Power Query, Azure SQL |
+| **[ORBELION AI Agent](https://github.com/Orbelion-Platform/ORBELION-AI-Agent)** | Read-only operational assistant; typed tool calls, client-scoped retrieval, structured evidence and explicit live-execution gates. Public architecture and synthetic contracts. | Python, FastAPI, OpenAI Agents SDK, Pydantic, Microsoft Graph, Azure Container Apps |
+| **[ORBELION Automations](https://github.com/Orbelion-Platform/ORBELION-Automations)** | Shared CLI/API execution boundary, validated configuration and explicit failure handling. Public synthetic example; documented framework remains a local development foundation. | Python, FastAPI, typed YAML, registered jobs and connectors |
 
-**Core:** Python · Pandas · SQL · Azure SQL · APIs · GitHub Actions
+### Selected Visual Evidence
 
-**[View Project →](https://github.com/Orbelion-Platform/ORBELION-ETL-Platform)**
+<a href="https://github.com/Orbelion-Platform/ORBELION-Power-BI#screenshots"><img src="https://raw.githubusercontent.com/Orbelion-Platform/ORBELION-Power-BI/main/docs/assets/dashboard-overview-synthetic.png" alt="Power BI executive dashboard using the synthetic EXAMPLE CLIENT scenario" width="820"></a>
 
-### ORBELION Operations Portal
+*Power BI executive overview — synthetic demonstration data, not customer performance.*
 
-Enterprise operations portal designed for client management, implementations, integrations and secure business workflows.
+Additional evidence: [ETL workflow](https://github.com/Orbelion-Platform/ORBELION-ETL-Platform/blob/main/docs/assets/etl-workflow.png) · [Operations screenshots](https://github.com/Orbelion-Platform/ORBELION-Operations-Portal#product-evidence) · [Agent screenshots](https://github.com/Orbelion-Platform/ORBELION-AI-Agent#product-evidence) · [Automations workflow and limitations](https://github.com/Orbelion-Platform/ORBELION-Automations#workflow-overview).
 
-**Core:** TypeScript · Microsoft Graph · SharePoint · Azure · Cloudflare
+<details>
+<summary>Additional ecosystem projects — public evidence pending</summary>
 
-**[View Project →](https://github.com/Orbelion-Platform/ORBELION-Operations-Portal)**
+ORBELION Portal General, ORBELION Finance Portal, ORBELION Analytics Dashboard, ORBELION Skills Library and ORBELION Content Studio are reserved for future evidence-backed portfolio entries. A verified public repository with sufficient technical documentation was not available for these entries at review time; no implementation or release claim is made here.
 
-### ORBELION Finance Portal
+</details>
 
-Financial management application focused on structured financial workflows, analytics and data-driven operations.
+## Security & DevSecOps
 
-**Core:** TypeScript · Cloudflare D1 · Drizzle ORM · SQL · Data Visualization
+Controls are evaluated per project and trust boundary.
 
-**[View Project →](https://github.com/Orbelion-Platform/ORBELION-Finance-Portal)**
+| Area | Documented implementation & current boundary |
+| --- | --- |
+| **Git & delivery** | Git-versioned artifacts and GitHub Actions workflows in ETL; the Agent case study documents Docker delivery to Azure Container Apps using OIDC. Public case studies do not all ship deployment workflows. |
+| **Identity & authorization** | Operations documents trusted hosting identity headers and role checks; Microsoft Entra ID supplies server-side Graph credentials. The Agent documents production bearer authentication and client-scope checks without claiming per-user federation. |
+| **Secrets** | Server-only runtime configuration, placeholder public examples and managed/workload identity where documented. ETL Key Vault configuration is an example requiring external setup. |
+| **Application boundaries** | Cloudflare Worker server routes separate browsers from upstream systems; Agent tools expose read-only retrieval. These controls are project-specific. |
+| **Observability** | ETL run audits and watermarks, portal write-audit events, and Agent request identifiers, evidence and warnings. A unified monitoring platform is not claimed. |
+| **Row Level Security** | No ecosystem-wide database RLS implementation is asserted. Application client filtering must not be described as database-enforced RLS. |
+| **Release discipline** | Branching, Pull Requests, environment separation and scoped review are engineering principles. Uniform branch enforcement and isolated staging across every project remain unverified. |
 
-### ORBELION Power BI Analytics
+**In development:** Automations requires durable reservations, recovery, tenant-bound authorization, scheduling and production monitoring before release. CI results, cloud configuration and access policies require target-environment verification; a local test result is not runtime proof.
 
-Business intelligence project showcasing semantic modeling, DAX, KPI design, PBIP development and version-controlled analytics.
+## Technology Ecosystem
 
-**Core:** Power BI · PBIP · DAX · Power Query · Semantic Modeling · Azure SQL
+| Category | Technologies represented in the documented projects |
+| --- | --- |
+| **Languages & Frameworks** | Python, TypeScript, React, Next.js, FastAPI, Pydantic |
+| **Cloud & Infrastructure** | Cloudflare Workers, Microsoft Azure, Azure Container Apps, Docker |
+| **Data Engineering** | pandas, SQL, YAML metadata, SQLAlchemy, Azure SQL, REST and Odoo connectors |
+| **Analytics & BI** | Power BI, PBIP, PBIR, TMDL, DAX, Power Query M |
+| **Enterprise Integrations** | Microsoft Graph, SharePoint Online, Microsoft Lists, Microsoft 365, Odoo XML-RPC |
+| **Artificial Intelligence** | OpenAI API, OpenAI Agents SDK, function tools, structured outputs |
+| **Security & Identity** | Microsoft Entra ID, Azure Identity, OAuth 2.0, managed/workload identity, OIDC; Key Vault configuration examples |
+| **DevOps & Automation** | Git, GitHub, GitHub Actions, pytest, Ruff, Node test runner, CLI/API execution |
 
-**[View Project →](https://github.com/Orbelion-Platform/ORBELION-PowerBI-Analytics)**
+## Engineering Principles
 
-### ORBELION AI Agent
-
-Enterprise AI agent built around secure tool calling, structured outputs and read-only integration with enterprise information sources.
-
-**Core:** Python · FastAPI · OpenAI Agents SDK · Microsoft Graph · SharePoint · Azure Container Apps
-
-**[View Project →](https://github.com/Orbelion-Platform/ORBELION-AI-Agent)**
-
----
-
-## Technology Stack
-
-### Data & Analytics
-
-Python · Pandas · SQL · Azure SQL · Power BI · DAX · Power Query
-
-### Application Development
-
-TypeScript · FastAPI · REST APIs · Drizzle ORM · Cloudflare D1
-
-### Microsoft & Cloud
-
-Azure · Microsoft Graph · SharePoint · Microsoft Entra ID · Azure Container Apps
-
-### AI & Automation
-
-OpenAI Agents SDK · Tool Calling · Structured Outputs · GitHub Actions
-
-### Infrastructure & DevOps
-
-GitHub · GitHub Actions · Docker · Cloudflare
-
----
-
-## Engineering Approach
-
-ORBELION projects demonstrate an engineering approach centered on:
-
-- Modular and reusable architecture
-- Separation of application, data and integration layers
-- Secure enterprise integrations
-- API-driven interoperability
-- Configuration-driven systems
-- Automated data pipelines and workflows
-- Analytical and semantic data modeling
-- Version-controlled development
-
----
-
-## Project Evidence
-
-Real, sanitized project screenshots and technical execution evidence will be incorporated for:
-
-**ETL Platform · Operations Portal · Finance Portal · Power BI Analytics · AI Agent**
-
----
-
-## About the Implementer
-
-**Axel Ortega**
-
-Technology Implementer · Data, Cloud & AI Solutions  
-Costa Rica
-
-Focused on implementing enterprise applications, data engineering platforms, analytics, cloud integrations, automation and AI-enabled solutions.
+| Principle | Practical commitment |
+| --- | --- |
+| **Modular Architecture** | Separate application, integration and analytical responsibilities. |
+| **API-First Integration** | Define typed contracts and validate requests at trust boundaries. |
+| **Security by Design** | Fail closed, minimize privileges and keep secrets server-side. |
+| **Data-Driven Engineering** | Trace conclusions to contracts, execution evidence and explicit limits. |
+| **Infrastructure Automation** | Version delivery workflows and keep environment values external. |
+| **Reusable Components** | Reuse connectors and execution logic while preserving ownership boundaries. |
+| **Observability** | Make failures diagnosable through scoped audits, identifiers and safe errors. |
+| **Version Control** | Use focused branches, reviewable changes and Pull Requests. |
 
 ---
 
 <div align="center">
 
-### ORBELION
+**ORBELION**<br>
+Enterprise Technology Solutions<br>
+Costa Rica
 
-**Enterprise Technology · Data · Cloud · Analytics · AI**
+[orbelion.com](https://orbelion.com)
+
+Engineering Excellence · Enterprise Integration · Technical Credibility
 
 </div>
